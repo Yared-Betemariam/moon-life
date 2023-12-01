@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
@@ -7,9 +7,9 @@ const Header = () => {
         <section className='max-w-3xl p-4 flex justify-between items-center px-8 mx-auto'>
           <Link className='font-extrabold tracking-tighter text-white' to='/' >{"(MOONLIFE)"}</Link>
           <nav className='text-white flex gap-4 items-center'>
-            <Link to='/about'>About</Link>
-            <Link to='/rockets'>Our Rockets</Link>
-            <Link to='/host'>Host</Link>
+          <NavLink className={({isActive}) => isActive? 'opacity-75 underline font-medium': null} to='/host'>Host</NavLink>
+            <NavLink className={({isActive}) => isActive? 'opacity-75 underline font-medium': null} to='/about'>About</NavLink>
+            <NavLink className={({isActive}) => isActive? 'opacity-75 underline font-medium': null} to='/rockets'>Our Rockets</NavLink>
           </nav>
         </section>
       </header>

@@ -1,14 +1,16 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, NavLink, Outlet } from 'react-router-dom'
 
 const HostLayout = () => {
   return (
     <>
-      <nav>
-        <Link to='/host'>Dashboard</Link>
-        <Link to='/host/income'>Income</Link>
-        <Link to='/host/reviews'>Reviews</Link>
+    <div className='bg-neutral-200 text-gray-950 font-semibold shadow-xl'>
+        <nav className='flex justify-between py-2 px-10 max-w-3xl mx-auto'>
+        <NavLink end className={({isActive}) => isActive? 'opacity-80 underline font-bold': 'opacity-75'} to='/host'>Dashboard</NavLink>
+        <NavLink className={({isActive}) => isActive? 'opacity-80 underline font-bold': 'opacity-75'} to='/host/income'>Income</NavLink>
+        <NavLink className={({isActive}) => isActive? 'opacity-80 underline font-bold': 'opacity-75'} to='/host/reviews'>Reviews</NavLink>
       </nav>
+    </div>
      <Outlet />
     </>
   )

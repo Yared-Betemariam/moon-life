@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <main className='flex flex-1 flex-col bg-gray-800 text-white'>
+    <main className='flex flex-1 flex-col text-white'>
       <img src={hero} className='w-full h-[35vh] object-cover object-top' alt="" />
       <article className='p-6 px-8 max-w-3xl mx-auto'>
         <h1 className='text-3xl mb-6 font-medium'>Don't rest until you achieve your dreams.</h1>

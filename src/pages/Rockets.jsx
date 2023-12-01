@@ -25,7 +25,7 @@ const Rockets = () => {
     </section>
   ))
   return (
-    <main className='flex-1 bg-gray-800 p-4 text-white'>
+    <main className='flex-1 p-4 text-white'>
       <h1 className='text-2xl font-medium text-center my-2 mb-6'>Our Rockets</h1>
       <article className='max-w-3xl gap-1 flex  flex-wrap mx-auto'>
         {rocketElements}

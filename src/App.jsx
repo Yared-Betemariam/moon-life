@@ -12,7 +12,7 @@ import Reviews from './pages/host/Reviews'
 import HostLayout from './components/HostLayout'
 
 const App = () => {
-  const time = new Date()
+  
   return (
     <BrowserRouter>
       <Routes>
@@ -26,13 +26,9 @@ const App = () => {
             <Route index element={<Dashboard />}/> 
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
-          </Route>
-          
+          </Route> 
         </Route>
       </Routes>
-      <footer className='h-12 bg-neutral-800 flex items-center justify-center text-center p-4  text-neutral-500  text-sm bottom-0 left-0 right-0'>
-        <p>&copy; {time.getFullYear()} (MOONLIFE)</p>
-      </footer>
     </BrowserRouter>
   )
 }

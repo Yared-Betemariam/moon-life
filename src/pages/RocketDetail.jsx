@@ -16,7 +16,7 @@ const RocketDetail = () => {
 
 
   return (
-    <main className='flex flex-1 text-white bg-gray-800'>
+    <main className='flex flex-1 text-white'>
       {rocket ? 
         <section className='flex max-w-3xl mx-auto flex-col p-4 '>
           <img className='w-full rounded-xl mb-4' src={rocket.img} alt="" />
