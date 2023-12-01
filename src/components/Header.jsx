@@ -9,6 +9,7 @@ const Header = () => {
           <nav className='text-white flex gap-4 items-center'>
             <Link to='/about'>About</Link>
             <Link to='/rockets'>Our Rockets</Link>
+            <Link to='/host'>Host</Link>
           </nav>
         </section>
       </header>

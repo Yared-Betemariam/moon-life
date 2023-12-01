@@ -17,6 +17,9 @@ const App = () => {
           <Route path='/about' element={<About />}/>
           <Route path='/rockets' element={<Rockets />}/>
           <Route path='/rockets/:id' element={<RocketDetail />}/>
+          <Route path='/host' element={<RocketDetail />}/>
+          <Route path='/host/income' element={<RocketDetail />}/>
+          <Route path='/host/reviews' element={<RocketDetail />}/>
         </Route>
       </Routes>
       <footer className='h-12 bg-neutral-800 flex items-center justify-center text-center p-4  text-neutral-500  text-sm bottom-0 left-0 right-0'>
