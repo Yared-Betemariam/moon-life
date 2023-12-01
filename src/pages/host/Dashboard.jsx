@@ -4,7 +4,9 @@ import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <>
-    <h1>D</h1>
+    <main className='flex flex-1'>
+
+  </main>
     <Outlet />
     </>
   )

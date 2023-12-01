@@ -27,7 +27,11 @@ const HostRocket = () => {
     <main className='flex flex-1'>
       <article className='py-2 px-8 max-w-3xl mx-auto flex flex-col'>
         <h1 className='text-3xl my-2 font-medium'>Your listed rockets</h1>
-        {rocketElements}
+        <section>
+          {rockets.length>0? rocketElements: (
+            <h2>Loading...</h2>
+          )}
+        </section>
       </article>
     </main>
   )

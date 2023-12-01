@@ -2,7 +2,9 @@ import React from 'react'
 
 const Reviews = () => {
   return (
-    <div>Reviews</div>
+    <main className='flex flex-1'>
+
+    </main>
   )
 }
 
