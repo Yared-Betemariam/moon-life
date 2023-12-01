@@ -10,6 +10,8 @@ import Dashboard from './pages/host/Dashboard'
 import Income from './pages/host/income'
 import Reviews from './pages/host/Reviews'
 import HostLayout from './components/HostLayout'
+import HostRocket from './pages/host/HostRocket'
+import HostRocketDetail from './pages/host/HostRocketDetail'
 
 const App = () => {
   
@@ -26,6 +28,8 @@ const App = () => {
             <Route index element={<Dashboard />}/> 
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
+            <Route path='rockets' element={<HostRocket />}/>
+            <Route path='rockets/:id' element={<HostRocketDetail />}/>
           </Route> 
         </Route>
       </Routes>
