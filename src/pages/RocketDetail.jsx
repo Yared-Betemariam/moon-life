@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation, useParams } from 'react-router-dom'
+import { Link, useLoaderData, useLocation, useParams } from 'react-router-dom'
 import Data from '../../data/Data'
+
+export function loader({params}) {
+  const Rock = ((Data.rockets).filter(rock => rock.id == params.id))[0]
+  return Rock
+}
 
 const RocketDetail = () => {
   const params = useParams()
-  const [rocket, setRocket] = useState(null)
+  // const [rocket, setRocket] = useState(null)
+  const rocket = useLoaderData()
   const location = useLocation()
 
-  useEffect(() => {
-    const fetchData = async () => {
-      /* const res = await fetch('http://localhost:3500/rockets');
-      const resJson = await res.json() */  
-    }
-    /* fetchData() */
-    const Rock = ((Data.rockets).filter(rock => rock.id == params.id))[0]
-    setRocket(Rock)
-  },[params.id])
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     /* const res = await fetch('http://localhost:3500/rockets');
+  //     const resJson = await res.json() */  
+  //   }
+  //   /* fetchData() */
+  //   const Rock = ((Data.rockets).filter(rock => rock.id == params.id))[0]
+  //   setRocket(Rock)
+  // },[params.id])
 
   const backLinker = location.state?.search || ''
   const backLinkerType = location.state?.type || ''

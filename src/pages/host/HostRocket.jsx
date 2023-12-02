@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import Data from '../../../data/Data'
-
+export function loader() {
+  return Data.rockets
+}
 const HostRocket = () => {
-  const [rockets, setRockets] = useState([])
-  useEffect(() => {
-    const fetchData = async () => {
-      /* const res = await fetch('http://localhost:3500/rockets');
-      const resJson = await res.json() */
+  //const [rockets, setRockets] = useState([])
+  const rockets = useLoaderData()
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     /* const res = await fetch('http://localhost:3500/rockets');
+  //     const resJson = await res.json() */
       
-    }
-    /* fetchData() */
-    setRockets(Data.rockets)
-  },[])
+  //   }
+  //   /* fetchData() */
+  //   setRockets(Data.rockets)
+  // },[])
 
   const rocketElements = rockets.map(rock => (
     <section key={rock.id} className='p-2 hover:opacity-80 hover:bg-gray-700 transition-all duration-200 rounded-md flex max-h-32'>

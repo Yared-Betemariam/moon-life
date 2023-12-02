@@ -4,14 +4,14 @@ import { BrowserRouter, createBrowserRouter, createRoutesFromElements, RouterPro
 import Home from './pages/Home'
 import About from './pages/About'
 import Rockets, {loader as rocketsLoader} from './pages/Rockets'
-import RocketDetail from './pages/RocketDetail'
+import RocketDetail, {loader as RocketDetailLoader} from './pages/RocketDetail'
 import Layout from './components/Layout'
 import Dashboard from './pages/host/Dashboard'
 import Income from './pages/host/Income'
 import Reviews from './pages/host/Reviews'
 import HostLayout from './components/HostLayout'
-import HostRocket from './pages/host/HostRocket'
-import HostRocketDetail from './pages/host/HostRocketDetail'
+import HostRocket, {loader as HostRocketLoader} from './pages/host/HostRocket'
+import HostRocketDetail, {loader as HostRocketDetailLoader} from './pages/host/HostRocketDetail'
 import HostRocketPricing from './pages/host/HostRocketPricing'
 import HostRocktePhotos from './pages/host/HostRocktePhotos'
 import HostRocketDetails from './pages/host/HostRocketDetails'
@@ -25,14 +25,14 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='about' element={<About />}/>
     <Route path='login' element={<Login />}/>
     <Route path='rockets' element={<Rockets />} errorElement={<Error />} loader={rocketsLoader}/>
-    <Route path='rockets/:id' element={<RocketDetail />}/>
+    <Route path='rockets/:id' element={<RocketDetail />} loader={RocketDetailLoader}/>
 
     <Route path='host' element={<HostLayout />}>
       <Route index element={<Dashboard />}/>    
       <Route path='income' element={<Income />}/>
       <Route path='reviews' element={<Reviews />}/>
-      <Route path='rockets' element={<HostRocket />} />
-      <Route path='rockets/:id' element={<HostRocketDetail />}>
+      <Route path='rockets' element={<HostRocket />} loader={HostRocketLoader}/>
+      <Route path='rockets/:id' element={<HostRocketDetail />} loader={HostRocketDetailLoader}>
         <Route index element={<HostRocketDetails />}/>
         <Route path='pricing' element={<HostRocketPricing />}/>
         <Route path='photos' element={<HostRocktePhotos />}/>
