@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import Data from '../../data/Data'
 
 const RocketDetail = () => {
   const params = useParams()
   const [rocket, setRocket] = useState(null)
+  const location = useLocation()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,12 +17,15 @@ const RocketDetail = () => {
     setRocket(Rock)
   },[params.id])
 
+  const backLinker = location.state?.search || '..'
+  const backLinkerType = location.state?.type || '..'
 
   return (
     <main className='flex flex-1 text-white'>
       {rocket ? 
-        <section className='flex max-w-3xl mx-auto flex-col p-4 '>
-          <img className='w-full rounded-xl mb-4' src={rocket.img} alt="" />
+        <section className='flex max-w-3xl mx-auto flex-col p-6 '>
+          <Link className='my-2 tracking-tight underline font-medium' relative='path' to={'../?'+backLinker}>&lt; Back to {backLinkerType[0].toUpperCase() + backLinkerType.slice(1)} Rockets</Link>
+          <img className='w-1/2 rounded-xl mt-2 mb-4' src={rocket.img} alt="" />
           <i className='bg-red-400 rounded-md py-2 p-4'>{rocket.type}</i>
           <h1 className='text-xl font-semibold mt-4'>{rocket.name}</h1>
           <p>{rocket.price}/day</p>

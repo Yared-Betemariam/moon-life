@@ -22,7 +22,7 @@ const HostRocketDetail = () => {
       {rocket ? 
       <>
         <article className='w-full max-w-3xl mx-auto p-4 '>
-          <Link relative='path' className='p-4 text-md font-medium tracking-tight' to='..'>&lt; Back to rocktets</Link>
+          <Link relative='path' className='p-4 text-md font-medium underline tracking-tight' to='..'>&lt; Back to rocktets</Link>
           <section className='flex my-4 gap-4'>
             <img className='w-[24vw] h-[24vw] max-w-[12rem] max-h-[12rem] rounded-xl mb-4' src={rocket.img} alt="" />
             <div className='flex flex-col'>
