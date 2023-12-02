@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Data from '../../../data/Data'
 
 const HostRocket = () => {
   const [rockets, setRockets] = useState([])
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:3500/rockets');
-      const resJson = await res.json()
-      setRockets(resJson)
+      /* const res = await fetch('http://localhost:3500/rockets');
+      const resJson = await res.json() */
+      
     }
-    fetchData()
+    /* fetchData() */
+    setRockets(Data.rockets)
   },[])
 
   const rocketElements = rockets.map(rock => (

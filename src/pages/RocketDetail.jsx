@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Data from '../../data/Data'
 
 const RocketDetail = () => {
   const params = useParams()
@@ -7,11 +8,12 @@ const RocketDetail = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:3500/rockets/'+params.id);
-      const resJson = await res.json()
-      setRocket(resJson);
+      /* const res = await fetch('http://localhost:3500/rockets');
+      const resJson = await res.json() */  
     }
-    fetchData()
+    /* fetchData() */
+    const Rock = ((Data.rockets).filter(rock => rock.id == params.id))[0]
+    setRocket(Rock)
   },[params.id])
 
 
