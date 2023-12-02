@@ -1,23 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useSearchParams } from 'react-router-dom'
+import { Link, NavLink, useLoaderData, useSearchParams } from 'react-router-dom'
 import Data from '../../data/Data'
 
+export function loader() {
+  return Data.rockets
+}
+
 const Rockets = () => {
-  const [rockets, setRockets] = useState([])
+  /* const [rockets, setRockets] = useState([]) */
   const [searchParams, setSearchParams] = useSearchParams()
 
   const typeFilter = searchParams.get('type')
-  console.log(typeFilter);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      /* const res = await fetch('http://localhost:3500/rockets');
-      const resJson = await res.json() */
+  const rockets = useLoaderData()
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     /* const res = await fetch('http://localhost:3500/rockets');
+  //     const resJson = await res.json() */
       
-    }
-    /* fetchData() */
-    setRockets(Data.rockets)
-  },[])
+  //   }
+  //   /* fetchData() */
+  //   setRockets(Data.rockets)
+  // },[])
 
   const toDisplayRockets = typeFilter? rockets.filter(rock => rock.type.toLowerCase() === typeFilter): rockets
   
