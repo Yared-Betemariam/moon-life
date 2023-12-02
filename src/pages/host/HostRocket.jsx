@@ -16,7 +16,7 @@ const HostRocket = () => {
 
   const rocketElements = rockets.map(rock => (
     <section key={rock.id} className='p-2 hover:opacity-80 hover:bg-gray-700 transition-all duration-200 rounded-md flex max-h-32'>
-      <Link className='flex gap-8' to={`/rockets/${rock.id}`}>
+      <Link className='flex gap-8' to={`${rock.id}`}>
       <img src={rock.img} className='rounded-xl' alt="" />
       <div className='my-4 text-xl font-medium'>
         <h3>{rock.name}</h3>
@@ -34,7 +34,7 @@ const HostRocket = () => {
             <h2>Loading...</h2>
           )}
         </section>
-      </article>
+      </article> 
     </main>
   )
 }

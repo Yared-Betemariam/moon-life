@@ -12,6 +12,9 @@ import Reviews from './pages/host/Reviews'
 import HostLayout from './components/HostLayout'
 import HostRocket from './pages/host/HostRocket'
 import HostRocketDetail from './pages/host/HostRocketDetail'
+import HostRocketPricing from './pages/host/HostRocketPricing'
+import HostRocktePhotos from './pages/host/HostRocktePhotos'
+import HostRocketDetails from './pages/host/HostRocketDetails'
 
 const App = () => {
   
@@ -29,7 +32,11 @@ const App = () => {
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
             <Route path='rockets' element={<HostRocket />}/>
-            <Route path='rockets/:id' element={<HostRocketDetail />}/>
+            <Route path='rockets/:id' element={<HostRocketDetail />}>
+              <Route index element={<HostRocketDetails />}/>
+              <Route path='pricing' element={<HostRocketPricing />}/>
+              <Route path='photos' element={<HostRocktePhotos />}/>
+            </Route>
           </Route> 
         </Route>
       </Routes>
