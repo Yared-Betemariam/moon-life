@@ -6,7 +6,7 @@ const Dashboard = () => {
     <>
     <main className='flex flex-1'>
 
-  </main>
+    </main>
     <Outlet />
     </>
   )
