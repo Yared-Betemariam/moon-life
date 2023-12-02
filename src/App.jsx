@@ -27,8 +27,8 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path='rockets' element={<Rockets />} errorElement={<Error />} loader={rocketsLoader}/>
     <Route path='rockets/:id' element={<RocketDetail />}/>
 
-      <Route index element={<Dashboard />}/>    
     <Route path='host' element={<HostLayout />}>
+      <Route index element={<Dashboard />}/>    
       <Route path='income' element={<Income />}/>
       <Route path='reviews' element={<Reviews />}/>
       <Route path='rockets' element={<HostRocket />} />

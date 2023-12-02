@@ -4,9 +4,9 @@ import { Outlet } from 'react-router-dom'
 const Dashboard = () => {
   return (
     <>
-    <main className='flex flex-1'>
-
-    </main>
+      <main className='flex flex-1'>
+        <h1>Dashboard</h1>
+      </main>
     <Outlet />
     </>
   )
