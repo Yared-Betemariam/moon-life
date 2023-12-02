@@ -26,10 +26,10 @@ const App = () => {
 
           <Route path='host' element={<HostLayout />}>
             <Route index element={<Dashboard />}/>    
-            <Route path='/host/income' element={<Income />}/>
-            <Route path='/host/reviews' element={<Reviews />}/>
-            <Route path='/host/rockets' element={<HostRocket />}/>
-            <Route path='/host/rockets/:id' element={<HostRocketDetail />}/>
+            <Route path='income' element={<Income />}/>
+            <Route path='reviews' element={<Reviews />}/>
+            <Route path='rockets' element={<HostRocket />}/>
+            <Route path='rockets/:id' element={<HostRocketDetail />}/>
           </Route> 
         </Route>
       </Routes>
