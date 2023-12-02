@@ -15,6 +15,7 @@ import HostRocketDetail from './pages/host/HostRocketDetail'
 import HostRocketPricing from './pages/host/HostRocketPricing'
 import HostRocktePhotos from './pages/host/HostRocktePhotos'
 import HostRocketDetails from './pages/host/HostRocketDetails'
+import PageNotFound from './pages/PageNotFound'
 
 const App = () => {
   
@@ -27,8 +28,8 @@ const App = () => {
           <Route path='rockets' element={<Rockets />}/>
           <Route path='rockets/:id' element={<RocketDetail />}/>
 
-          <Route path='host' element={<HostLayout />}>
             <Route index element={<Dashboard />}/>    
+          <Route path='host' element={<HostLayout />}>
             <Route path='income' element={<Income />}/>
             <Route path='reviews' element={<Reviews />}/>
             <Route path='rockets' element={<HostRocket />}/>
@@ -38,6 +39,7 @@ const App = () => {
               <Route path='photos' element={<HostRocktePhotos />}/>
             </Route>
           </Route> 
+          <Route path='*' element={<PageNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
