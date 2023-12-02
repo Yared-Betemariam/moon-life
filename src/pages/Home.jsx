@@ -8,7 +8,8 @@ const Home = () => {
       <article className=' max-w-3xl mx-auto'>
         <h1 className='text-4xl font-bold z-10'>You decide where to go. we take care of shipping.</h1>
         <p className='my-4 z-10 mb-10'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id a provident eaque, molestiae, reprehe</p>
-        <Link className='z-10 px-8 text-center py-3 bg-sky-800 rounded-md shadow-md font-semibold text-md' to='/rockets'>Find your Rocket</Link>
+        <Link className='z-10 px-8 text-center py-3 bg-sky-800 rounded-md shadow-md font-semibold text-md mr-4' to='rockets'>Find your Rocket</Link>
+        <Link className='z-10 px-8 text-center py-3 bg-white text-sky-800 rounded-md shadow-md font-semibold text-md' to='login'>Login</Link>
       </article>
     </main>
   )

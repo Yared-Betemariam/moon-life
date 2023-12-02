@@ -17,11 +17,13 @@ import HostRocktePhotos from './pages/host/HostRocktePhotos'
 import HostRocketDetails from './pages/host/HostRocketDetails'
 import PageNotFound from './pages/PageNotFound'
 import Error from './Error'
+import Login from './pages/Login'
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout /> }>
     <Route index element={<Home />}/>
     <Route path='about' element={<About />}/>
+    <Route path='login' element={<Login />}/>
     <Route path='rockets' element={<Rockets />} errorElement={<Error />} loader={rocketsLoader}/>
     <Route path='rockets/:id' element={<RocketDetail />}/>
 
