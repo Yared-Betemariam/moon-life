@@ -3,8 +3,8 @@ import { Link, NavLink, Outlet, useLoaderData, useParams } from 'react-router-do
 import Data from '../../../data/Data'
 import { requireAuth } from '../../utils'
 
-export async function loader({params}) { 
-  await requireAuth()
+export async function loader({params, request}) { 
+  await requireAuth(request)
   const Rock = ((Data.rockets).filter(rock => rock.id == params.id))[0]
   return Rock
 }

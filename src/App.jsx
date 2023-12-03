@@ -17,7 +17,7 @@ import HostRocktePhotos from './pages/host/HostRocktePhotos'
 import HostRocketDetails from './pages/host/HostRocketDetails'
 import PageNotFound from './pages/PageNotFound'
 import Error from './Error'
-import Login, {loader as loginLoader} from './pages/Login'
+import Login, {loader as loginLoader, action as loginAction} from './pages/Login'
 import { requireAuth } from './utils'
 
 
@@ -25,12 +25,12 @@ const router = createBrowserRouter(createRoutesFromElements(
   <Route path='/' element={<Layout /> }>
     <Route index element={<Home />}/>
     <Route path='about' element={<About />}/>
-    <Route path='login' element={<Login />} loader={loginLoader}/>
+    <Route path='login' element={<Login />} loader={loginLoader} action={loginAction}/>
     <Route path='rockets' element={<Rockets />} errorElement={<Error />} loader={rocketsLoader}/>
     <Route path='rockets/:id' element={<RocketDetail />} loader={RocketDetailLoader}/>
 
     <Route path='host' element={<HostLayout />}>
-      <Route index element={<Dashboard />} loader={async () => await requireAuth()}/>    
+      <Route index element={<Dashboard />} loader={async ({request}) => await requireAuth(request)}/>    
       <Route path='income' element={<Income />} loader={async () => await requireAuth()}/>
       <Route path='reviews' element={<Reviews />} loader={async () => await requireAuth()}/>
       <Route path='rockets' element={<HostRocket />} loader={HostRocketLoader}/>

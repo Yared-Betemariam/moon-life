@@ -4,8 +4,8 @@ import Data from '../../../data/Data'
 import { requireAuth } from '../../utils'
 
 
-export async function loader() {
-  await requireAuth()
+export async function loader({request}) {
+  await requireAuth(request)
   return Data.rockets
 }
 const HostRocket = () => {
