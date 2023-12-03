@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import Data from '../../../data/Data'
-export function loader() {
+import { requireAuth } from '../../utils'
+
+
+export async function loader() {
+  await requireAuth()
   return Data.rockets
 }
 const HostRocket = () => {

@@ -1,7 +1,16 @@
 import React, { useState } from 'react'
+import { useLoaderData } from 'react-router-dom'
+
+
+export async function loader({request}) {
+  const final = new URL(request.url).searchParams.get('message')
+  return final
+}
+
 
 const Login = () => {
   const [loginFormData, setLoginFormData] = useState({email: '', passwork: ''})
+  const message = useLoaderData()
 
   function handleSubmit(e){
     e.preventDefault()
@@ -16,7 +25,8 @@ const Login = () => {
   return (
     <main className='flex flex-1'>
       <article className='max-w-3xl mx-auto w-full flex flex-col p-6'>
-        <h1 className='text-2xl my-4 tracking-tight text-center'>Sign in to your account</h1>
+        <h1 className='text-2xl my-4 tracking-tight text-center font-bold'>Sign in to your account</h1>
+        {message && <h2 className='text-red-500 text-center text-xl font-medium opacity-85'>{message}</h2>}
         <form className='flex flex-col p-4' onSubmit={handleSubmit}>
           <input className='rounded-md my-2 text-sky-900 px-4 py-2 text-lg' name='email' onChange={handleChange} placeholder='johnDiggle@gmail.com' value={loginFormData.email} type="text" required/>
           <input type="password"  className='rounded-md my-2 text-sky-900 px-4 py-2 text-lg' name='password' onChange={handleChange} placeholder='sldjfawofjj203j' value={loginFormData.password} required/>
